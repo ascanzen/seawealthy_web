@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  haiyingping:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: haiyingping-web:latest
+    container_name: haiyingping-web
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:80/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - haiyingping-net
+
+networks:
+  haiyingping-net:
+    driver: bridge

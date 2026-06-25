@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 50% 98%;
+    --foreground: 210 30% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 30% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 30% 15%;
+    --primary: 207 80% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 50% 96%;
+    --secondary-foreground: 210 30% 15%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 210 15% 45%;
+    --accent: 42 55% 58%;
+    --accent-foreground: 210 30% 15%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 30% 90%;
+    --input: 210 30% 90%;
+    --ring: 207 80% 45%;
+    --radius: 0.75rem;
+
+    /* Custom brand colors */
+    --ocean-deep: 203 85% 27%;
+    --ocean-primary: 207 80% 51%;
+    --ocean-soft: 207 90% 68%;
+    --ocean-bg: 205 80% 96%;
+    --gold: 42 55% 58%;
+    --gold-light: 45 75% 75%;
+    --gold-dark: 40 50% 48%;
+    --text-dark: 207 35% 18%;
+    --text-gray: 210 15% 42%;
+    --success: 142 69% 45%;
+    --locked: 210 20% 80%;
+    --chest: 25 75% 63%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #E8F4FD 0%, #F5FAFF 50%, #EDF6FF 100%);
+    min-height: 100vh;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-3.5 rounded-full text-white font-medium transition-all duration-200;
+    background: linear-gradient(135deg, #1E88E5 0%, #0A4F7C 100%);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(30, 136, 229, 0.35);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-3.5 rounded-full font-medium transition-all duration-200 border-2;
+    border-color: #1E88E5;
+    color: #1E88E5;
+    background: transparent;
+  }
+  .btn-secondary:hover {
+    background: #1E88E5;
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center px-8 py-3.5 rounded-full text-white font-medium transition-all duration-200;
+    background: linear-gradient(135deg, #D4A853 0%, #B8943F 100%);
+  }
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 168, 83, 0.35);
+  }
+
+  .card-glass {
+    @apply bg-white/80 backdrop-blur-md rounded-[20px];
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 xl:px-12;
+  }
+
+  .max-container {
+    @apply max-w-[1280px] mx-auto;
+  }
+}
+
+@layer utilities {
+  .text-gradient-ocean {
+    background: linear-gradient(135deg, #0A4F7C 0%, #1E88E5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #D4A853 0%, #F0D78C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-ocean-gradient {
+    background: linear-gradient(135deg, #E8F4FD 0%, #F5FAFF 50%, #EDF6FF 100%);
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 5px rgba(212, 168, 83, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(212, 168, 83, 0.6), 0 0 40px rgba(212, 168, 83, 0.2); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes chestOpen {
+  0% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.1) rotate(-3deg); }
+  50% { transform: scale(1.15) rotate(3deg); }
+  75% { transform: scale(1.1) rotate(-1deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+@keyframes particleBurst {
+  0% { transform: translate(0, 0) scale(1); opacity: 1; }
+  100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
+}
+
+.chest-opening {
+  animation: chestOpen 0.6s ease-out;
+}
