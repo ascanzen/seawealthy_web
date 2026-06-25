@@ -1,13 +1,17 @@
 # Stage 1: Build
-FROM node:20-slim AS builder
+# Use alpine variant to avoid glibc/thread creation issues on some older Docker hosts.
+FROM node:20-alpine AS builder
 
 WORKDIR /app
+
+# npm 10 may fail silently on some Docker/overlayfs hosts; upgrade to a stable npm 11.
+RUN npm install -g npm@11.17.0
 
 # Copy dependency files
 COPY package*.json ./
 
 # Install all dependencies (including devDependencies for build)
-RUN npm ci --legacy-peer-deps
+RUN npm ci --legacy-peer-deps --include=dev
 
 # Copy source and build
 COPY . .
