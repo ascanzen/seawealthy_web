@@ -16,8 +16,6 @@ const footerLinks = {
     { label: '常见问题', href: '/support' },
     { label: '使用指南', href: '/support' },
     { label: '问题反馈', href: '/support' },
-    { label: '会员协议', href: '/atom/protocal/v1/support_url' },
-    { label: '隐私政策', href: '/atom/protocal/v1/privacy_url' },
   ],
 };
 
@@ -25,7 +23,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#0A4F7C] text-white rounded-t-3xl mt-20">
       <div className="max-container section-padding py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
             <Link to="/" className="flex items-center gap-2.5 mb-5">
@@ -87,6 +85,12 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <a href="/atom/protocal/v1/support_url" className="text-sm text-white/60 hover:text-white transition-colors">会员协议</a>
+              </li>
+              <li>
+                <a href="/atom/protocal/v1/privacy_url" className="text-sm text-white/60 hover:text-white transition-colors">隐私政策</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -105,13 +109,13 @@ export default function Footer() {
               © 2024 北京海盈平科技有限公司 版权所有 | 京ICP备2026039802号 | 京ICP备2026039802号-1
             </p>
             <div className="flex items-center gap-4 text-xs text-white/40">
-              <Link to="/atom/protocal/v1/privacy_url" className="hover:text-white/60 transition-colors">
+              <a href="/atom/protocal/v1/privacy_url" className="hover:text-white/60 transition-colors">
                 隐私政策
-              </Link>
+              </a>
               <span>|</span>
-              <Link to="/atom/protocal/v1/support_url" className="hover:text-white/60 transition-colors">
+              <a href="/atom/protocal/v1/support_url" className="hover:text-white/60 transition-colors">
                 会员协议
-              </Link>
+              </a>
               <span>|</span>
               <Link to="/support" className="hover:text-white/60 transition-colors">
                 合规声明
