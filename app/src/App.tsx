@@ -11,6 +11,7 @@ import Tech from '@/pages/Tech';
 import Download from '@/pages/Download';
 import About from '@/pages/About';
 import Support from '@/pages/Support';
+import LegalPage from '@/pages/LegalPage';
 
 interface LoginContextType {
   isLoggedIn: boolean;
@@ -93,6 +94,8 @@ export default function App() {
               <Route path="/download" element={<PageWrapper><Download /></PageWrapper>} />
               <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
               <Route path="/support" element={<PageWrapper><Support /></PageWrapper>} />
+              <Route path="/atom/protocal/v1/support_url" element={<PageWrapper><LegalPage type="support" /></PageWrapper>} />
+              <Route path="/atom/protocal/v1/privacy_url" element={<PageWrapper><LegalPage type="privacy" /></PageWrapper>} />
             </Routes>
           </AnimatePresence>
         </div>

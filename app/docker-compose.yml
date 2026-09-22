@@ -7,6 +7,9 @@ services:
     container_name: haiyingping-web
     ports:
       - "80:80"
+      - "443:443"
+    volumes:
+      - ./cert:/etc/nginx/cert:ro
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:80/"]

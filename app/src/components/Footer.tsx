@@ -16,6 +16,8 @@ const footerLinks = {
     { label: '常见问题', href: '/support' },
     { label: '使用指南', href: '/support' },
     { label: '问题反馈', href: '/support' },
+    { label: '会员协议', href: '/atom/protocal/v1/support_url' },
+    { label: '隐私政策', href: '/atom/protocal/v1/privacy_url' },
   ],
 };
 
@@ -114,15 +116,15 @@ export default function Footer() {
 
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-xs text-white/40">
-              © 2024 海盈平科技 版权所有 | 粤ICP备xxxxxxxx号
+              © 2024 北京海盈平科技有限公司 版权所有 | 京ICP备2026039802号 | 京ICP备2026039802号-1
             </p>
             <div className="flex items-center gap-4 text-xs text-white/40">
-              <Link to="/support" className="hover:text-white/60 transition-colors">
+              <Link to="/atom/protocal/v1/privacy_url" className="hover:text-white/60 transition-colors">
                 隐私政策
               </Link>
               <span>|</span>
-              <Link to="/support" className="hover:text-white/60 transition-colors">
-                用户协议
+              <Link to="/atom/protocal/v1/support_url" className="hover:text-white/60 transition-colors">
+                会员协议
               </Link>
               <span>|</span>
               <Link to="/support" className="hover:text-white/60 transition-colors">
