@@ -1,4 +1,4 @@
-.PHONY: help build up down restart logs shell clean push deploy-local deploy-prod
+.PHONY: help build up down restart logs shell clean push deploy deploy-local deploy-prod
 
 # Default target
 help:

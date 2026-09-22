@@ -31,7 +31,7 @@ ssh "$REMOTE_HOST" bash <<EOF
 set -euo pipefail
 
 cd "$REMOTE_DIR"
-echo "[远端] 当前目录: \\$(pwd)"
+echo "[远端] 当前目录: \$(pwd)"
 
 echo "[远端] git pull --ff-only ${REMOTE_NAME} ${CURRENT_BRANCH}"
 git pull --ff-only "$REMOTE_NAME" "$CURRENT_BRANCH"
