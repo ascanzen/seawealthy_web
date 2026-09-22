@@ -10,7 +10,7 @@ REPO_ROOT="$(git rev-parse --show-toplevel)"
 CURRENT_BRANCH="$(git -C "$REPO_ROOT" rev-parse --abbrev-ref HEAD)"
 REMOTE_NAME="${1:-origin}"
 
-echo "[1/3] 本地推送分支: ${CURRENT_BRANCH} -> ${REMOTE_NAME}"
+echo "[1/4] 本地推送分支: ${CURRENT_BRANCH} -> ${REMOTE_NAME}"
 git -C "$REPO_ROOT" push "$REMOTE_NAME" "$CURRENT_BRANCH"
 
 echo "[2/4] 上传证书到远端"
@@ -36,25 +36,8 @@ echo "[远端] 当前目录: \\$(pwd)"
 echo "[远端] git pull --ff-only ${REMOTE_NAME} ${CURRENT_BRANCH}"
 git pull --ff-only "$REMOTE_NAME" "$CURRENT_BRANCH"
 
-echo "[远端] 停止服务"
-if make -n stop >/dev/null 2>&1; then
-  make stop
-elif make -n down >/dev/null 2>&1; then
-  make down
-else
-  echo "未找到 make stop/down 目标，请检查 Makefile" >&2
-  exit 1
-fi
-
-echo "[远端] 启动服务"
-if make -n start >/dev/null 2>&1; then
-  make start
-elif make -n up >/dev/null 2>&1; then
-  make up
-else
-  echo "未找到 make start/up 目标，请检查 Makefile" >&2
-  exit 1
-fi
+echo "[远端] 构建并启动服务"
+make deploy
 EOF
 
 echo "[4/4] 部署完成"
