@@ -86,10 +86,10 @@ export default function Footer() {
                 </li>
               ))}
               <li>
-                <a href="/atom/protocal/v1/support_url" className="text-sm text-white/60 hover:text-white transition-colors">会员协议</a>
+                <a href="/atom/protocal/v1/member.html" className="text-sm text-white/60 hover:text-white transition-colors">会员协议</a>
               </li>
               <li>
-                <a href="/atom/protocal/v1/privacy_url" className="text-sm text-white/60 hover:text-white transition-colors">隐私政策</a>
+                <a href="/atom/protocal/v1/privacy.html" className="text-sm text-white/60 hover:text-white transition-colors">隐私政策</a>
               </li>
             </ul>
           </div>
@@ -109,11 +109,11 @@ export default function Footer() {
               © 2024 北京海盈平科技有限公司 版权所有 | 京ICP备2026039802号 | 京ICP备2026039802号-1
             </p>
             <div className="flex items-center gap-4 text-xs text-white/40">
-              <a href="/atom/protocal/v1/privacy_url" className="hover:text-white/60 transition-colors">
+              <a href="/atom/protocal/v1/privacy.html" className="hover:text-white/60 transition-colors">
                 隐私政策
               </a>
               <span>|</span>
-              <a href="/atom/protocal/v1/support_url" className="hover:text-white/60 transition-colors">
+              <a href="/atom/protocal/v1/member.html" className="hover:text-white/60 transition-colors">
                 会员协议
               </a>
               <span>|</span>
