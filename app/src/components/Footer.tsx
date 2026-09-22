@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { Waves, Mail, Phone, MapPin } from 'lucide-react';
+import { Waves } from 'lucide-react';
 
 const footerLinks = {
   products: [
@@ -25,7 +25,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#0A4F7C] text-white rounded-t-3xl mt-20">
       <div className="max-container section-padding py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {/* Brand */}
           <div>
             <Link to="/" className="flex items-center gap-2.5 mb-5">
@@ -37,20 +37,6 @@ export default function Footer() {
             <p className="text-sm text-white/70 leading-relaxed mb-5">
               专注金融场景AI数据处理、智能量化分析、交易者辅助工具研发的科技企业
             </p>
-            <div className="space-y-2.5">
-              <div className="flex items-center gap-2.5 text-sm text-white/60">
-                <Mail className="w-4 h-4 shrink-0" />
-                <span>support@haiyingping.com</span>
-              </div>
-              <div className="flex items-center gap-2.5 text-sm text-white/60">
-                <Phone className="w-4 h-4 shrink-0" />
-                <span>400-xxx-xxxx</span>
-              </div>
-              <div className="flex items-center gap-2.5 text-sm text-white/60">
-                <MapPin className="w-4 h-4 shrink-0" />
-                <span>深圳市南山区科技园</span>
-              </div>
-            </div>
           </div>
 
           {/* Products */}

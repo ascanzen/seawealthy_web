@@ -57,12 +57,6 @@ const supportAgreement: LegalContent = {
         '如用户违反本协议或法律法规，公司有权限制、暂停或终止相关账号的部分或全部服务，并保留依法追究责任的权利。',
       ],
     },
-    {
-      title: '六、联系我们',
-      paragraphs: [
-        '如您对会员服务、订单、续费或本协议有任何疑问，可通过客服中心或 support@haiyingping.com 联系我们。',
-      ],
-    },
   ],
 };
 
@@ -116,12 +110,6 @@ const privacyPolicy: LegalContent = {
       title: '七、未成年人保护',
       paragraphs: [
         '我们的产品和服务主要面向具备完全民事行为能力的成年人。未成年人使用服务前，应取得监护人同意并在监护人指导下使用。',
-      ],
-    },
-    {
-      title: '八、联系我们',
-      paragraphs: [
-        '如您对本隐私政策或个人信息保护事项有任何疑问，可通过客服中心或 support@haiyingping.com 联系我们。',
       ],
     },
   ],

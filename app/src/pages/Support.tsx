@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import {
-  MessageCircle, Mail, Phone, ChevronDown, HelpCircle
-} from 'lucide-react';
+import { ChevronDown, HelpCircle } from 'lucide-react';
 
 const faqs = [
   {
@@ -22,37 +20,8 @@ const faqs = [
     a: '不提供。本站所有产品均为技术工具，不构成任何投资建议、交易指导或理财推介。所有市场数据仅供学习研究参考，使用者需自主承担全部使用风险。',
   },
   {
-    q: '如何联系客服？',
-    a: '您可通过页面底部在线客服、发送邮件至 support@haiyingping.com，或在工作日 9:00-18:00 拨打客服热线 400-xxx-xxxx 联系我们。',
-  },
-  {
     q: '支持哪些操作系统？',
     a: '我们的工具全面支持 Windows 10/11、macOS 12+、iOS 和 Android 系统。您可以在"终端下载"页面获取各平台的安装包。',
-  },
-];
-
-const contactMethods = [
-  {
-    icon: MessageCircle,
-    title: '在线客服',
-    desc: '工作日 9:00-18:00',
-    action: '立即咨询',
-    color: '#1E88E5',
-  },
-  {
-    icon: Mail,
-    title: '邮件支持',
-    desc: 'support@haiyingping.com',
-    action: '发送邮件',
-    color: '#D4A853',
-  },
-  {
-    icon: Phone,
-    title: '电话热线',
-    desc: '400-xxx-xxxx',
-    note: '工作日 9:00-18:00',
-    action: '拨打热线',
-    color: '#34C759',
   },
 ];
 
@@ -73,9 +42,7 @@ export default function Support() {
             <h1 className="text-3xl md:text-5xl font-bold text-[#0A4F7C] mb-4">
               客服中心
             </h1>
-            <p className="text-lg text-[#5A6A7A] max-w-xl mx-auto">
-              我们随时为您解答疑问
-            </p>
+            <p className="text-lg text-[#5A6A7A] max-w-xl mx-auto">常见问题与产品说明</p>
           </motion.div>
         </div>
       </section>
@@ -146,54 +113,6 @@ export default function Support() {
         </div>
       </section>
 
-      {/* Contact Methods */}
-      <section className="py-20 bg-gradient-to-br from-[#E8F4FD] to-[#F0F7FF]">
-        <div className="max-container section-padding">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1A2B3C]">
-              联系我们
-            </h2>
-            <p className="text-[#5A6A7A] mt-2">选择适合您的方式与我们沟通</p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {contactMethods.map((method, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15 }}
-                whileHover={{ y: -4, boxShadow: '0 12px 40px rgba(0,0,0,0.08)' }}
-                className="card-glass p-8 text-center"
-              >
-                <div
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4"
-                  style={{ backgroundColor: `${method.color}10` }}
-                >
-                  <method.icon className="w-7 h-7" style={{ color: method.color }} />
-                </div>
-                <h3 className="font-bold text-[#1A2B3C] mb-1">{method.title}</h3>
-                <p className="text-sm text-[#5A6A7A] mb-1">{method.desc}</p>
-                {method.note && (
-                  <p className="text-xs text-[#8A9AAE] mb-4">{method.note}</p>
-                )}
-                <button
-                  className="mt-4 px-6 py-2.5 rounded-full text-sm font-medium text-white transition-all hover:-translate-y-0.5 hover:shadow-lg"
-                  style={{ backgroundColor: method.color }}
-                >
-                  {method.action}
-                </button>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
     </main>
   );
 }
