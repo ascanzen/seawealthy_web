@@ -1,4 +1,4 @@
-.PHONY: help build up down restart logs shell clean push deploy deploy-local deploy-prod
+.PHONY: help build up down restart logs shell clean push deploy deploy-atom deploy-local deploy-prod
 
 # Default target
 help:
@@ -16,6 +16,7 @@ help:
 	@echo "  make clean        清理容器、镜像和卷"
 	@echo "  make rebuild      重新构建并启动"
 	@echo "  make deploy       构建 + 启动（一键部署）"
+	@echo "  make deploy-atom  发布 Atom 静态页面（不构建镜像）"
 	@echo ""
 
 # Build Docker image
@@ -61,6 +62,10 @@ rebuild: down build up
 
 # One-click deploy
 deploy: build up
+
+# Atom 静态文件通过只读目录映射发布，不重新构建镜像
+deploy-atom:
+	./deploy-atom.sh
 
 # Tag and push (example for private registry)
 tag:

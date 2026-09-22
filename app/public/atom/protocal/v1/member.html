@@ -1,68 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>会员服务协议及续费协议</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0;}
-html{-webkit-text-size-adjust:100%;}
-body{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
-    background:#ffffff;color:#222;
-    line-height:1.8;
-    max-width:720px;
-    margin:0 auto;
-    padding:32px 24px 64px;
-    -webkit-font-smoothing:antialiased;
-}
-h1{font-size:22px;font-weight:600;line-height:1.4;margin-bottom:20px;}
-p{margin:12px 0;font-size:16px;}
-ul,ol{padding-left:22px;margin:12px 0;}
-li{margin:8px 0;font-size:16px;}
-strong{font-weight:600;}
-
-/* 手机屏幕适配 */
-@media (max-width:480px){
-    body{padding:24px 18px 48px;line-height:1.75;}
-    h1{font-size:20px;}
-    p,li{font-size:15px;}
-    p{margin:10px 0;}
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f6f8fb">
+  <meta name="description" content="Atom 浏览器 Pro 会员服务、自动续费、终身购买、取消订阅及恢复购买说明。">
+  <title>Atom Pro · 会员服务与自动续费协议</title>
+  <style>
+    :root { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; color: #17212d; background: #f6f8fb; }
+    * { box-sizing: border-box; }
+    body { margin: 0; line-height: 1.75; }
+    a { color: #1762c4; text-underline-offset: 3px; }
+    a:focus-visible { outline: 3px solid #68a8ff; outline-offset: 3px; }
+    .shell { max-width: 780px; margin: auto; padding: 30px 24px 70px; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 44px; }
+    .brand { display: flex; align-items: center; gap: 12px; color: #17212d; text-decoration: none; font-size: 17px; font-weight: 750; }
+    .mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; background: #1974e8; color: white; font-size: 22px; }
+    .links { display: flex; gap: 14px; font-size: 14px; }
+    .eyebrow { margin: 0 0 12px; color: #1762c4; font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    h1 { margin: 0; font-size: clamp(30px, 6vw, 42px); letter-spacing: -.04em; line-height: 1.25; }
+    .intro { margin: 18px 0 30px; color: #4c596a; font-size: 17px; }
+    .card { padding: 26px 30px; border: 1px solid #dfe7f1; border-radius: 18px; background: white; box-shadow: 0 12px 35px rgba(31, 72, 115, .05); }
+    .card + .card { margin-top: 16px; }
+    h2 { margin: 0 0 12px; font-size: 20px; }
+    p { margin: 0 0 12px; }
+    p:last-child { margin-bottom: 0; }
+    ul, ol { margin: 0; padding-left: 21px; }
+    li + li { margin-top: 8px; }
+    .muted { color: #586576; }
+    .notice { margin: 22px 0; padding: 16px 20px; border-left: 4px solid #1974e8; border-radius: 6px 12px 12px 6px; background: #eaf3ff; }
+    .english { margin-top: 54px; padding-top: 32px; border-top: 1px solid #dfe6ee; }
+    .english h2 { font-size: 26px; }
+    footer { margin-top: 45px; padding-top: 20px; border-top: 1px solid #dfe6ee; display: flex; gap: 14px; flex-wrap: wrap; color: #687587; font-size: 13px; }
+    @media (max-width: 600px) { .shell { padding: 22px 18px 48px; } header { align-items: flex-start; } .links { flex-direction: column; gap: 0; } .card { padding: 22px; } }
+  </style>
 </head>
 <body>
-<h1>会员服务协议及续费协议</h1>
+  <div class="shell">
+    <header>
+      <a class="brand" href="https://www.seawealthy.com/atom/protocal/v1/support.html"><span class="mark" aria-hidden="true">A</span><span>Atom 浏览器</span></a>
+      <nav class="links" aria-label="相关页面"><a href="https://www.seawealthy.com/atom/protocal/v1/support.html">帮助与支持</a><a href="https://www.seawealthy.com/atom/protocal/v1/privacy_url">隐私政策</a></nav>
+    </header>
 
-<p>本规则被视为《会员服务协议》的补充协议，是其不可分割的组成部分，与其构成统一整体，如本规则与《会员服务协议》存在冲突的，以本规则为准。如您需使用Atom浏览器VIP自动续费服务，则需同意本规则。</p>
+    <main>
+      <p class="eyebrow">Atom Pro</p>
+      <h1>会员服务与自动续费协议</h1>
+      <p class="intro">本页说明 Atom 浏览器的月度、年度自动续订会员和一次性终身购买。购买前请以 App 内 Apple 购买界面显示的商品、价格及条款为准。</p>
 
-<p>您理解并同意：</p>
+      <section class="card" aria-labelledby="products">
+        <h2 id="products">1. 购买方案</h2>
+        <ul>
+          <li><strong>月度会员：</strong>购买后获得一个月的 Atom Pro 状态；到期后按月自动续订，除非提前取消。</li>
+          <li><strong>年度会员：</strong>购买后获得一年的 Atom Pro 状态；一次支付整个年度的费用，到期后按年自动续订，除非提前取消。</li>
+          <li><strong>终身会员：</strong>一次性购买 Atom Pro 状态，不自动续费。</li>
+        </ul>
+      </section>
 
-<p>1. 服务名称：自动续费。</p>
+      <section class="card" aria-labelledby="service">
+        <h2 id="service">2. 服务内容</h2>
+        <p>Atom 的广告和追踪器防护对所有用户持续开放。购买 Atom Pro 可显示会员状态、停止后续付费提醒，并支持防护规则的持续维护。关闭购买页不会降低基础防护质量。</p>
+        <p class="muted">当前规则随 App 版本更新；本服务不承诺每日远程更新规则，也不保证拦截所有网站的全部广告。</p>
+      </section>
 
-<p>2. 本服务是在您已开通Atom浏览器VIP服务的前提下，为您提供的自动续费服务。如您开通Atom浏览器VIP服务，则视为您授权Atom浏览器VIP有权在您的Atom浏览器VIP服务即将到期时，从您的iTunes账户（以下统称“账户”）余额中代扣下一个计费周期包月费。该服务实现的前提是可成功从上述账户中扣款，因上述账户中扣款余额不足导致的续费失败，由您自行承担。</p>
+      <section class="card" aria-labelledby="billing">
+        <h2 id="billing">3. 扣费与自动续订</h2>
+        <p>月度和年度会员通过 Apple 应用内购买订阅。购买确认后，费用由 Apple 账户扣取。订阅到期前会按所选周期自动续订并再次扣费；如不希望续订，请在当前周期结束前至少 24 小时取消。终身会员为一次性购买，不会自动续费。</p>
+        <p>实际价格、币种和可能适用的税费，以购买时 Apple 显示的信息为准。Atom 不会直接收取支付卡信息。</p>
+      </section>
 
-<p>Atom浏览器VIP有一种订购方式可供选择：</p>
+      <section class="card" aria-labelledby="manage">
+        <h2 id="manage">4. 取消与恢复</h2>
+        <ol>
+          <li><strong>取消订阅：</strong>打开 iPhone 或 iPad 的“设置” → Apple 账户 →“订阅” → Atom，选择取消。取消后，已支付周期内的权益按 Apple 显示的到期时间继续有效。</li>
+          <li><strong>恢复购买：</strong>在使用原购买 Apple 账户的设备上，打开 Atom 增强保护购买页并点击“恢复购买”。如仍无法恢复，请联系支持。</li>
+        </ol>
+      </section>
 
-<p>第一种：1个月，每1个月自动续订。</p>
+      <section class="card" aria-labelledby="contact">
+        <h2 id="contact">5. 联系与隐私</h2>
+        <p>使用或购买遇到问题，可访问 <a href="https://www.seawealthy.com/atom/protocal/v1/support.html">Atom 帮助与支持</a>，或发送邮件至 <a href="mailto:95432531@qq.com">95432531@qq.com</a>。个人信息处理请参阅 <a href="https://www.seawealthy.com/atom/protocal/v1/privacy_url">隐私政策</a>。</p>
+      </section>
 
-<p>3. 购买自动续费Atom浏览器VIP的账号，会在到期前24小时，自动续订并扣除相应费用。如已开通1个月Atom浏览器VIP自动续费服务，则Atom浏览器VIP服务到期前自动从账户扣费并延长1个月Atom浏览器VIP有效期。在不同时间点购买不同月份的自动续费会员情况下，将以最后开通的自动续费会员为准。如已开通12个月Atom浏览器VIP自动续费，在本月又开通了12个月Atom浏览器VIP自动续费，则服务到期前自动从账户扣费并延长12个月Atom浏览器VIP有效期。</p>
+      <p class="notice">请在确认购买前阅读 Apple 购买界面中显示的订阅周期、价格与续订信息。</p>
 
-<p>4. 如需取消自动续订，请至少提前24小时操作取消。您可通过下述方式中止或终止本服务：</p>
+      <section class="english" lang="en" aria-labelledby="english-title">
+        <h2 id="english-title">Membership and auto-renewal summary</h2>
+        <p>Atom offers monthly and yearly auto-renewing memberships and a one-time lifetime purchase. Monthly and yearly plans are charged through your Apple Account for their respective periods and renew unless you cancel at least 24 hours before the current period ends. The lifetime purchase does not renew.</p>
+        <p>Core ad and tracker blocking remains available to everyone. Pro displays membership status, stops purchase reminders, and supports ongoing filter maintenance. Filter rules are delivered with app updates; daily remote updates and complete blocking of every ad are not promised.</p>
+        <p>To manage or cancel a subscription, open Settings → Apple Account → Subscriptions → Atom. To restore a purchase, use Restore Purchases on Atom’s purchase page while signed in to the original Apple Account. The price and terms shown by Apple at purchase are authoritative.</p>
+        <p>For help, visit <a href="https://www.seawealthy.com/atom/protocal/v1/support.html">Atom Support</a> or email <a href="mailto:95432531@qq.com">95432531@qq.com</a>.</p>
+      </section>
+    </main>
 
-<p><strong>退订方法一</strong>：在Atom浏览器App中的“管理我的订阅”中，取消Atom浏览器VIP的订阅。</p>
-
-<p><strong>退订方法二</strong>：苹果应用内支付（IAP支付，in-app purchase）自动续费用户退订方法如下：</p>
-
-<ol>
-<li>打开苹果手机“设置”；</li>
-<li>进入“iTunes Store 与 App Store”；</li>
-<li>点击“Apple ID”，选择“查看Apple ID”，进入“账户设置”页面；</li>
-<li>点击“订阅”，选择Atom浏览器VIP取消订阅即可。</li>
-</ol>
-
-<p>5. 联系邮箱：95432531@qq.com</p>
-
+    <footer><span>© Atom 浏览器</span><a href="https://www.seawealthy.com/atom/protocal/v1/privacy_url">隐私政策 / Privacy Policy</a></footer>
+  </div>
 </body>
 </html>
-<!-- （注：内容由AI生成） -->
