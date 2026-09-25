@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 cert/
+traefik/letsencrypt/
 
 # Editor directories and files
 .vscode/*

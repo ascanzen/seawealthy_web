@@ -1,0 +1,4 @@
+tls:
+  certificates:
+    - certFile: /certs/www.seawealthy.com.pem
+      keyFile: /certs/www.seawealthy.com.key
