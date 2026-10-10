@@ -1,73 +1,41 @@
-# React + TypeScript + Vite
+# Seawealthy Web
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+海盈平科技官网及统一 Web 入口。生产环境由 Traefik 接管公网 HTTP/HTTPS，官网由容器内 Nginx 提供，其他项目通过 Docker labels 接入共享网络。
 
-Currently, two official plugins are available:
+## 生产环境
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+| 项目 | 当前值 |
+| --- | --- |
+| 服务器公网 IP | `59.110.213.100` |
+| 部署目录 | `/data/seawealthy_web/app` |
+| 公网入口 | `seawealthy-traefik`，端口 `80/443` |
+| 官网容器 | `haiyingping-web`，内部端口 `80` |
+| 共享网络 | `web-proxy` |
+| 主站域名 | `seawealthy.com`、`www.seawealthy.com` |
+| TradeCal 域名 | `tradecal.seawealthy.com` |
 
-## React Compiler
+完整拓扑、证书、接入规范和运维命令见 [容器部署架构](./DEPLOYMENT_ARCHITECTURE.md)。
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 常用命令
 
-## Expanding the ESLint configuration
+```bash
+# 完整构建并启动
+make deploy
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# 查看状态和日志
+make status
+make logs
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# 仅发布 app/public/atom 静态文件，不构建镜像
+make deploy-atom
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 关键文件
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- `docker-compose.yml`：Traefik、官网 Nginx、网络和路由标签
+- `traefik/dynamic.yml`：现有商业证书的动态 TLS 配置
+- `nginx.conf`：官网静态文件、SPA fallback 和 Atom 固定路由
+- `deploy.sh`：完整远程部署
+- `deploy-atom.sh`：Atom 静态文件免构建部署
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+证书私钥、ACME 状态和环境变量文件不得提交到 Git。
